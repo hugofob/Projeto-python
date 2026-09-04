@@ -51,13 +51,14 @@ def main():
                 break
             case 1:
                 if cc is None:
+                    cc = ContaBancaria(111, "Hugo", 10_000, 'casagrande')
                     print("[yellow]Conta criada com sucesso![/]")
                 else:
-                    cc = ContaBancaria(111, "Hugo", 10_000, 'casagrande')
+                    print("Conta ja foi criada.")
             case 2:
                 if cc is None:
                     print("[red]Primeiro crie a conta[/]!")
-                    return
+                    continue
                 valor = float(input("Informe o valor do saque?"))
                 cc.saque(valor)
             case 3:
@@ -68,9 +69,9 @@ def main():
             case 5:
                 if cc is None:
                     print("[red]Primeiro crie a conta[/]!")
-                    return
+                    continue
                 else:
-                    1print(f"[green]Saldo atual: R$:{cc.saldo:.2f}[/]")
+                    print(f"[green]Saldo atual: R$:{cc.saldo:.2f}[/]")
         #inspect(cc, private=True, methods=True)
 
 if __name__ == '__main__':
